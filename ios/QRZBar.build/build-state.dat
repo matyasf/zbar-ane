@@ -1,0 +1,225 @@
+TQRZBar
+v4
+r1
+cCheck dependencies
+cProcessPCH /var/folders/3h/3hyS9fGBEGGhkpFqmywbG++++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/QRZBar-Prefix-apcjuvggfbgsycdyweruoaacbyjc/QRZBar-Prefix.pch.pth QRZBar/QRZBar-Prefix.pch normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC ../../ANEBuild/debug/QRZBar.build/Objects-normal/armv7/QRZBar.o /Users/janheuff/Desktop/QRZBar/XCode/QRZBar/QRZBar/QRZBar.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC ../../ANEBuild/debug/QRZBar.build/Objects-normal/armv7/CallZBar.o /Users/janheuff/Desktop/QRZBar/XCode/QRZBar/QRZBar/CallZBar.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cLibtool /Users/janheuff/Desktop/QRZBar/XCode/QRZBar/../../ANEBuild/debug/libQRZBar.a normal armv7
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk
+c000000004E7840290000000000000110
+t1316503593
+s272
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/AVFoundation.framework/AVFoundation
+c000000004E7807DB000000000015F8A0
+t1316489179
+s1439904
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/CoreMedia.framework/CoreMedia
+c000000004E78069100000000000748C0
+t1316488849
+s477376
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/CoreVideo.framework/CoreVideo
+c000000004E72F744000000000001A9B0
+t1316157252
+s108976
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/Foundation.framework/Foundation
+c000000004E72F3440000000000529540
+t1316156228
+s5412160
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/QuartzCore.framework/QuartzCore
+c000000004E72F8910000000000173260
+t1316157585
+s1520224
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/usr/lib/libiconv.dylib
+c000000004E72EB4400000000001FCA40
+t1316154180
+s2083392
+
+N/Users/janheuff/Desktop/QRZBar/XCode/QRZBar/../../ANEBuild/debug/QRZBar.build/Objects-normal/armv7/CallZBar.o
+t2
+s0
+
+N/Users/janheuff/Desktop/QRZBar/XCode/QRZBar/../../ANEBuild/debug/QRZBar.build/Objects-normal/armv7/QRZBar.LinkFileList
+c000000004F3BF2F700000000000000DA
+t1329328887
+s218
+
+N/Users/janheuff/Desktop/QRZBar/XCode/QRZBar/../../ANEBuild/debug/QRZBar.build/Objects-normal/armv7/QRZBar.o
+t2
+s0
+
+N/Users/janheuff/Desktop/QRZBar/XCode/QRZBar/../../ANEBuild/debug/libQRZBar.a
+t2
+s0
+
+N/Users/janheuff/Desktop/QRZBar/XCode/QRZBar/QRZBar/CallZBar.m
+c000000004F3BF2890000000000000997
+t1329328777
+s2455
+
+N/Users/janheuff/Desktop/QRZBar/XCode/QRZBar/QRZBar/QRZBar-Prefix.pch
+c000000004F3B969F00000000000000AC
+t1329305247
+s172
+
+N/Users/janheuff/Desktop/QRZBar/XCode/QRZBar/QRZBar/QRZBar.m
+c000000004F3BB3140000000000000E41
+t1329312532
+s3649
+
+N/Users/janheuff/Desktop/QRZBar/XCode/QRZBar/QRZBar/ZBarSDK/Headers/ZBarSDK/ZBarCameraSimulator.h
+c000000004E40215F000000000000066A
+t1312825695
+s1642
+
+N/Users/janheuff/Desktop/QRZBar/XCode/QRZBar/QRZBar/ZBarSDK/Headers/ZBarSDK/ZBarCaptureReader.h
+c000000004E40215F0000000000000EA0
+t1312825695
+s3744
+
+N/Users/janheuff/Desktop/QRZBar/XCode/QRZBar/QRZBar/ZBarSDK/Headers/ZBarSDK/ZBarHelpController.h
+c000000004E40215F00000000000007B2
+t1312825695
+s1970
+
+N/Users/janheuff/Desktop/QRZBar/XCode/QRZBar/QRZBar/ZBarSDK/Headers/ZBarSDK/ZBarImage.h
+c000000004E40215F0000000000000905
+t1312825695
+s2309
+
+N/Users/janheuff/Desktop/QRZBar/XCode/QRZBar/QRZBar/ZBarSDK/Headers/ZBarSDK/ZBarImageScanner.h
+c000000004E40215F00000000000006AB
+t1312825695
+s1707
+
+N/Users/janheuff/Desktop/QRZBar/XCode/QRZBar/QRZBar/ZBarSDK/Headers/ZBarSDK/ZBarReaderController.h
+c000000004E40215F000000000000145B
+t1312825695
+s5211
+
+N/Users/janheuff/Desktop/QRZBar/XCode/QRZBar/QRZBar/ZBarSDK/Headers/ZBarSDK/ZBarReaderView.h
+c000000004E40215F00000000000011E1
+t1312825695
+s4577
+
+N/Users/janheuff/Desktop/QRZBar/XCode/QRZBar/QRZBar/ZBarSDK/Headers/ZBarSDK/ZBarReaderViewController.h
+c000000004E40215F00000000000015ED
+t1312825695
+s5613
+
+N/Users/janheuff/Desktop/QRZBar/XCode/QRZBar/QRZBar/ZBarSDK/Headers/ZBarSDK/ZBarSDK.h
+c000000004E40215F0000000000000555
+t1312825695
+s1365
+
+N/Users/janheuff/Desktop/QRZBar/XCode/QRZBar/QRZBar/ZBarSDK/Headers/ZBarSDK/ZBarSymbol.h
+c000000004E40215F0000000000000957
+t1312825695
+s2391
+
+N/Users/janheuff/Desktop/QRZBar/XCode/QRZBar/QRZBar/ZBarSDK/Headers/ZBarSDK/zbar.h
+c000000004E40215F000000000000D1C6
+t1312825695
+s53702
+
+N/Users/janheuff/Desktop/QRZBar/XCode/QRZBar/QRZBar/ZBarSDK/libzbar.a
+c000000004E40215F00000000002E5F0C
+t1312825695
+s3038988
+
+N/var/folders/3h/3hyS9fGBEGGhkpFqmywbG++++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/QRZBar-Prefix-apcjuvggfbgsycdyweruoaacbyjc/QRZBar-Prefix.pch.pth
+t2
+s0
+
+CBuild AST from /Users/janheuff/Desktop/QRZBar/XCode/QRZBar/QRZBar/CallZBar.m
+r0
+
+CBuild AST from /Users/janheuff/Desktop/QRZBar/XCode/QRZBar/QRZBar/QRZBar.m
+r0
+
+CCheck dependencies
+r0
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependenciesbb471a772aecb441^25b021772aecb441^---0#1#0#--18"Check dependencies36"160D03EA-B9C8-4C9F-B834-E2960CE766B7-
+
+CCompileC ../../ANEBuild/debug/QRZBar.build/Objects-normal/armv7/CallZBar.o /Users/janheuff/Desktop/QRZBar/XCode/QRZBar/QRZBar/CallZBar.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s351021687.445467
+e351021687.535325
+r1
+xCompileC
+x../../ANEBuild/debug/QRZBar.build/Objects-normal/armv7/CallZBar.o
+x/Users/janheuff/Desktop/QRZBar/XCode/QRZBar/QRZBar/CallZBar.m
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+o/Users/janheuff/Desktop/QRZBar/XCode/QRZBar/QRZBar/CallZBar.m:59:11:{59:11-59:24}: warning: format string is not a string literal (potentially insecure) [-Wformat-security,9]
+o     NSLog([symbol data]);
+o           ^~~~~~~~~~~~~
+o1 warning generated.
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection69"Compile /Users/janheuff/Desktop/QRZBar/XCode/QRZBar/QRZBar/CallZBar.m253b72772aecb441^fa0b89772aecb441^-248"/Users/janheuff/Desktop/QRZBar/XCode/QRZBar/QRZBar/CallZBar.m:59:11:{59:11-59:24}: warning: format string is not a string literal (potentially insecure) [-Wformat-security,9]     NSLog([symbol data]);           ^~~~~~~~~~~~~1 warning generated.1(21%IDEActivityLogMessage2@60"Format string is not a string literal (potentially insecure)37"Format string is not a string literal351021687#0#175#-1#-23%DVTTextDocumentLocation3@77"file://localhost/Users/janheuff/Desktop/QRZBar/XCode/QRZBar/QRZBar/CallZBar.m0000000000000000^58#10#58#10#18446744073709551615#0#19"Format String Issue1(3@77"file://localhost/Users/janheuff/Desktop/QRZBar/XCode/QRZBar/QRZBar/CallZBar.m0000000000000000^58#10#58#23#18446744073709551615#0#-0#0#0#-19%DVTDocumentLocation4@77"file://localhost/Users/janheuff/Desktop/QRZBar/XCode/QRZBar/QRZBar/CallZBar.m0000000000000000^2360"CompileC ../../ANEBuild/debug/QRZBar.build/Objects-normal/armv7/CallZBar.o QRZBar/CallZBar.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/janheuff/Desktop/QRZBar/XCode/QRZBar    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/clang -x objective-c -arch armv7 -fmessage-length=0 -fdiagnostics-print-source-range-info -fdiagnostics-show-category=id -fdiagnostics-parseable-fixits -std=gnu99 -Wno-trigraphs -fpascal-strings -static -O0 -Wmissing-prototypes -Wreturn-type -Wparentheses -Wswitch -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-shorten-64-to-32 -DDEBUG=1 -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk -gdwarf-2 -Wno-sign-conversion -mthumb "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -miphoneos-version-min=4.0 -iquote /Users/janheuff/Desktop/QRZBar/XCode/QRZBar/../../ANEBuild/debug/QRZBar.build/QRZBar-generated-files.hmap -I/Users/janheuff/Desktop/QRZBar/XCode/QRZBar/../../ANEBuild/debug/QRZBar.build/QRZBar-own-target-headers.hmap -I/Users/janheuff/Desktop/QRZBar/XCode/QRZBar/../../ANEBuild/debug/QRZBar.build/QRZBar-all-target-headers.hmap -iquote /Users/janheuff/Desktop/QRZBar/XCode/QRZBar/../../ANEBuild/debug/QRZBar.build/QRZBar-project-headers.hmap -I/Users/janheuff/Desktop/QRZBar/XCode/QRZBar/../../ANEBuild/debug/include -I/Users/janheuff/Desktop/QRZBar/XCode/QRZBar/../../ANEBuild/debug/QRZBar.build/DerivedSources/armv7 -I/Users/janheuff/Desktop/QRZBar/XCode/QRZBar/../../ANEBuild/debug/QRZBar.build/DerivedSources -F/Users/janheuff/Desktop/QRZBar/XCode/QRZBar/../../ANEBuild/debug -include /var/folders/3h/3hyS9fGBEGGhkpFqmywbG++++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/QRZBar-Prefix-apcjuvggfbgsycdyweruoaacbyjc/QRZBar-Prefix.pch -MMD -MT dependencies -MF /Users/janheuff/Desktop/QRZBar/XCode/QRZBar/../../ANEBuild/debug/QRZBar.build/Objects-normal/armv7/CallZBar.d -c /Users/janheuff/Desktop/QRZBar/XCode/QRZBar/QRZBar/CallZBar.m -o /Users/janheuff/Desktop/QRZBar/XCode/QRZBar/../../ANEBuild/debug/QRZBar.build/Objects-normal/armv7/CallZBar.o36"494FFC30-1167-4EE3-A289-8571950E330E-
+
+CCompileC ../../ANEBuild/debug/QRZBar.build/Objects-normal/armv7/QRZBar.o /Users/janheuff/Desktop/QRZBar/XCode/QRZBar/QRZBar/QRZBar.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s351021687.445483
+e351021687.499978
+r1
+xCompileC
+x../../ANEBuild/debug/QRZBar.build/Objects-normal/armv7/QRZBar.o
+x/Users/janheuff/Desktop/QRZBar/XCode/QRZBar/QRZBar/QRZBar.m
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+o/Users/janheuff/Desktop/QRZBar/XCode/QRZBar/QRZBar/QRZBar.m:11:11: warning: no previous prototype for function 'scan' [-Wmissing-prototypes,3]
+o FREObject scan(FREContext ctx, void* funcData, uint32_t argc, FREObject argv[] )
+o           ^
+o/Users/janheuff/Desktop/QRZBar/XCode/QRZBar/QRZBar/QRZBar.m:61:6: warning: no previous prototype for function 'ContextInitializer' [-Wmissing-prototypes,3]
+o void ContextInitializer(void* extData, const uint8_t* ctxType, FREContext ctx, 
+o      ^
+o/Users/janheuff/Desktop/QRZBar/XCode/QRZBar/QRZBar/QRZBar.m:82:6: warning: no previous prototype for function 'ContextFinalizer' [-Wmissing-prototypes,3]
+o void ContextFinalizer(FREContext ctx) {
+o      ^
+o/Users/janheuff/Desktop/QRZBar/XCode/QRZBar/QRZBar/QRZBar.m:98:6: warning: no previous prototype for function 'ExtInitializer' [-Wmissing-prototypes,3]
+o void ExtInitializer(void** extDataToSet, FREContextInitializer* ctxInitializerToSet, 
+o      ^
+o/Users/janheuff/Desktop/QRZBar/XCode/QRZBar/QRZBar/QRZBar.m:114:6: warning: no previous prototype for function 'ExtFinalizer' [-Wmissing-prototypes,3]
+o void ExtFinalizer(void* extData) {
+o      ^
+o5 warnings generated.
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection67"Compile /Users/janheuff/Desktop/QRZBar/XCode/QRZBar/QRZBar/QRZBar.m6f2e72772aecb441^9bff7f772aecb441^-1150"/Users/janheuff/Desktop/QRZBar/XCode/QRZBar/QRZBar/QRZBar.m:11:11: warning: no previous prototype for function 'scan' [-Wmissing-prototypes,3] FREObject scan(FREContext ctx, void* funcData, uint32_t argc, FREObject argv[] )           ^/Users/janheuff/Desktop/QRZBar/XCode/QRZBar/QRZBar/QRZBar.m:61:6: warning: no previous prototype for function 'ContextInitializer' [-Wmissing-prototypes,3] void ContextInitializer(void* extData, const uint8_t* ctxType, FREContext ctx,       ^/Users/janheuff/Desktop/QRZBar/XCode/QRZBar/QRZBar/QRZBar.m:82:6: warning: no previous prototype for function 'ContextFinalizer' [-Wmissing-prototypes,3] void ContextFinalizer(FREContext ctx) {      ^/Users/janheuff/Desktop/QRZBar/XCode/QRZBar/QRZBar/QRZBar.m:98:6: warning: no previous prototype for function 'ExtInitializer' [-Wmissing-prototypes,3] void ExtInitializer(void** extDataToSet, FREContextInitializer* ctxInitializerToSet,       ^/Users/janheuff/Desktop/QRZBar/XCode/QRZBar/QRZBar/QRZBar.m:114:6: warning: no previous prototype for function 'ExtFinalizer' [-Wmissing-prototypes,3] void ExtFinalizer(void* extData) {      ^5 warnings generated.5(21%IDEActivityLogMessage2@41"No previous prototype for function 'scan'-351021687#0#143#-1#-23%DVTTextDocumentLocation3@75"file://localhost/Users/janheuff/Desktop/QRZBar/XCode/QRZBar/QRZBar/QRZBar.m0000000000000000^10#10#10#10#18446744073709551615#0#14"Semantic Issue--2@55"No previous prototype for function 'ContextInitializer'-351021687#238#156#-1#-3@75"file://localhost/Users/janheuff/Desktop/QRZBar/XCode/QRZBar/QRZBar/QRZBar.m0000000000000000^60#5#60#5#18446744073709551615#0#14"Semantic Issue--2@53"No previous prototype for function 'ContextFinalizer'-351021687#483#154#-1#-3@75"file://localhost/Users/janheuff/Desktop/QRZBar/XCode/QRZBar/QRZBar/QRZBar.m0000000000000000^81#5#81#5#18446744073709551615#0#14"Semantic Issue--2@51"No previous prototype for function 'ExtInitializer'-351021687#686#152#-1#-3@75"file://localhost/Users/janheuff/Desktop/QRZBar/XCode/QRZBar/QRZBar/QRZBar.m0000000000000000^97#5#97#5#18446744073709551615#0#14"Semantic Issue--2@49"No previous prototype for function 'ExtFinalizer'-351021687#933#151#-1#-3@75"file://localhost/Users/janheuff/Desktop/QRZBar/XCode/QRZBar/QRZBar/QRZBar.m0000000000000000^113#5#113#5#18446744073709551615#0#14"Semantic Issue--0#0#0#-19%DVTDocumentLocation4@75"file://localhost/Users/janheuff/Desktop/QRZBar/XCode/QRZBar/QRZBar/QRZBar.m0000000000000000^2350"CompileC ../../ANEBuild/debug/QRZBar.build/Objects-normal/armv7/QRZBar.o QRZBar/QRZBar.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/janheuff/Desktop/QRZBar/XCode/QRZBar    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/clang -x objective-c -arch armv7 -fmessage-length=0 -fdiagnostics-print-source-range-info -fdiagnostics-show-category=id -fdiagnostics-parseable-fixits -std=gnu99 -Wno-trigraphs -fpascal-strings -static -O0 -Wmissing-prototypes -Wreturn-type -Wparentheses -Wswitch -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-shorten-64-to-32 -DDEBUG=1 -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk -gdwarf-2 -Wno-sign-conversion -mthumb "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -miphoneos-version-min=4.0 -iquote /Users/janheuff/Desktop/QRZBar/XCode/QRZBar/../../ANEBuild/debug/QRZBar.build/QRZBar-generated-files.hmap -I/Users/janheuff/Desktop/QRZBar/XCode/QRZBar/../../ANEBuild/debug/QRZBar.build/QRZBar-own-target-headers.hmap -I/Users/janheuff/Desktop/QRZBar/XCode/QRZBar/../../ANEBuild/debug/QRZBar.build/QRZBar-all-target-headers.hmap -iquote /Users/janheuff/Desktop/QRZBar/XCode/QRZBar/../../ANEBuild/debug/QRZBar.build/QRZBar-project-headers.hmap -I/Users/janheuff/Desktop/QRZBar/XCode/QRZBar/../../ANEBuild/debug/include -I/Users/janheuff/Desktop/QRZBar/XCode/QRZBar/../../ANEBuild/debug/QRZBar.build/DerivedSources/armv7 -I/Users/janheuff/Desktop/QRZBar/XCode/QRZBar/../../ANEBuild/debug/QRZBar.build/DerivedSources -F/Users/janheuff/Desktop/QRZBar/XCode/QRZBar/../../ANEBuild/debug -include /var/folders/3h/3hyS9fGBEGGhkpFqmywbG++++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/QRZBar-Prefix-apcjuvggfbgsycdyweruoaacbyjc/QRZBar-Prefix.pch -MMD -MT dependencies -MF /Users/janheuff/Desktop/QRZBar/XCode/QRZBar/../../ANEBuild/debug/QRZBar.build/Objects-normal/armv7/QRZBar.d -c /Users/janheuff/Desktop/QRZBar/XCode/QRZBar/QRZBar/QRZBar.m -o /Users/janheuff/Desktop/QRZBar/XCode/QRZBar/../../ANEBuild/debug/QRZBar.build/Objects-normal/armv7/QRZBar.o36"DE06A0CA-8027-468F-A94F-AF73CDCE897B-
+
+CLibtool /Users/janheuff/Desktop/QRZBar/XCode/QRZBar/../../ANEBuild/debug/libQRZBar.a normal armv7
+s351021687.536556
+e351021687.591123
+r1
+xLibtool
+x/Users/janheuff/Desktop/QRZBar/XCode/QRZBar/../../ANEBuild/debug/libQRZBar.a
+xnormal
+xarmv7
+o/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/libtool: -dynamic not specified the following flags are invalid: -ObjC 
+o/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/libtool: file: /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/usr/lib/libiconv.dylib is a dynamic library, not added to the static library
+o/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/libtool: file: /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/usr/lib/libiconv.dylib is a dynamic library, not added to the static library
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection53"Libtool ../../ANEBuild/debug/libQRZBar.a normal armv7a06d89772aecb441^564499772aecb441^---0#0#0#--1000"Libtool ../../ANEBuild/debug/libQRZBar.a normal armv7    cd /Users/janheuff/Desktop/QRZBar/XCode/QRZBar    setenv IPHONEOS_DEPLOYMENT_TARGET 4.0    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/libtool -static -arch_only armv7 -syslibroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk -L/Users/janheuff/Desktop/QRZBar/XCode/QRZBar/../../ANEBuild/debug -L/Users/janheuff/Desktop/QRZBar/XCode/QRZBar/QRZBar/ZBarSDK -filelist /Users/janheuff/Desktop/QRZBar/XCode/QRZBar/../../ANEBuild/debug/QRZBar.build/Objects-normal/armv7/QRZBar.LinkFileList -ObjC /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/usr/lib/libiconv.dylib -framework QuartzCore -framework CoreVideo -framework CoreMedia -framework AVFoundation -framework Foundation -lzbar -o /Users/janheuff/Desktop/QRZBar/XCode/QRZBar/../../ANEBuild/debug/libQRZBar.a36"0BC84000-A4D7-4A2D-9730-6DF636A27F9F-
+
+CProcessPCH /Users/janheuff/Library/Developer/Xcode/DerivedData/QRZBar-fitxddaznhfpnnhcztenhituneox/Index/PrecompiledHeaders/QRZBar-Prefix-aqnmkeqaezjfcnbqdpnuqtagvugm_ast/QRZBar-Prefix.pch.pth QRZBar/QRZBar-Prefix.pch normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.astbuilder
+r0
+
+CProcessPCH /var/folders/3h/3hyS9fGBEGGhkpFqmywbG++++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/QRZBar-Prefix-apcjuvggfbgsycdyweruoaacbyjc/QRZBar-Prefix.pch.pth QRZBar/QRZBar-Prefix.pch normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s351021687.134315
+e351021687.443647
+r1
+xProcessPCH
+x/var/folders/3h/3hyS9fGBEGGhkpFqmywbG++++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/QRZBar-Prefix-apcjuvggfbgsycdyweruoaacbyjc/QRZBar-Prefix.pch.pth
+xQRZBar/QRZBar-Prefix.pch
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection35"Precompile QRZBar/QRZBar-Prefix.pcheb9023772aecb441^809b71772aecb441^---0#0#0#-19%DVTDocumentLocation2@84"file://localhost/Users/janheuff/Desktop/QRZBar/XCode/QRZBar/QRZBar/QRZBar-Prefix.pch0000000000000000^2416"ProcessPCH /var/folders/3h/3hyS9fGBEGGhkpFqmywbG++++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/QRZBar-Prefix-apcjuvggfbgsycdyweruoaacbyjc/QRZBar-Prefix.pch.pth QRZBar/QRZBar-Prefix.pch normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/janheuff/Desktop/QRZBar/XCode/QRZBar    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/clang -x objective-c-header -arch armv7 -fmessage-length=0 -fdiagnostics-print-source-range-info -fdiagnostics-show-category=id -fdiagnostics-parseable-fixits -std=gnu99 -Wno-trigraphs -fpascal-strings -static -O0 -Wmissing-prototypes -Wreturn-type -Wparentheses -Wswitch -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-shorten-64-to-32 -DDEBUG=1 -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk -gdwarf-2 -Wno-sign-conversion -mthumb "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -miphoneos-version-min=4.0 -iquote /Users/janheuff/Desktop/QRZBar/XCode/QRZBar/../../ANEBuild/debug/QRZBar.build/QRZBar-generated-files.hmap -I/Users/janheuff/Desktop/QRZBar/XCode/QRZBar/../../ANEBuild/debug/QRZBar.build/QRZBar-own-target-headers.hmap -I/Users/janheuff/Desktop/QRZBar/XCode/QRZBar/../../ANEBuild/debug/QRZBar.build/QRZBar-all-target-headers.hmap -iquote /Users/janheuff/Desktop/QRZBar/XCode/QRZBar/../../ANEBuild/debug/QRZBar.build/QRZBar-project-headers.hmap -I/Users/janheuff/Desktop/QRZBar/XCode/QRZBar/../../ANEBuild/debug/include -I/Users/janheuff/Desktop/QRZBar/XCode/QRZBar/../../ANEBuild/debug/QRZBar.build/DerivedSources/armv7 -I/Users/janheuff/Desktop/QRZBar/XCode/QRZBar/../../ANEBuild/debug/QRZBar.build/DerivedSources -F/Users/janheuff/Desktop/QRZBar/XCode/QRZBar/../../ANEBuild/debug -c /Users/janheuff/Desktop/QRZBar/XCode/QRZBar/QRZBar/QRZBar-Prefix.pch -o /var/folders/3h/3hyS9fGBEGGhkpFqmywbG++++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/QRZBar-Prefix-apcjuvggfbgsycdyweruoaacbyjc/QRZBar-Prefix.pch.pth -MMD -MT dependencies -MF /var/folders/3h/3hyS9fGBEGGhkpFqmywbG++++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/QRZBar-Prefix-apcjuvggfbgsycdyweruoaacbyjc/QRZBar-Prefix.pch.d36"746C3875-8D12-4F47-9BFA-716D7D4D7FF3-
+

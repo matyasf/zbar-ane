@@ -1,0 +1,23 @@
+<extension xmlns="http://ns.adobe.com/air/extension/3.5">
+    <id>com.blogspot.visualscripts.zbarane</id>
+    <versionNumber>0.0.1</versionNumber>
+    <platforms>
+        <platform name="Android-ARM">
+            <applicationDeployment>
+                <nativeLibrary>zbarane.jar</nativeLibrary>
+				<initializer>com.blogspot.visualscripts.ane.InitZbar</initializer>
+            </applicationDeployment>
+        </platform>
+         
+        <platform name="iPhone-ARM">
+			<applicationDeployment>
+				<nativeLibrary>libQRZBar.a</nativeLibrary>
+                <initializer>ExtInitializer</initializer>
+                <finalizer>ExtFinalizer</finalizer>
+            </applicationDeployment>
+        </platform>
+        <platform name="default">
+            <applicationDeployment/>
+        </platform>
+     </platforms>
+</extension>

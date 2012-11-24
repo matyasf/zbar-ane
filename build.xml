@@ -1,0 +1,91 @@
+<!-- builds the project. Does NOT build the Android/iOS project, you need to update their files manually. 
+Built with Flex 4.6+AIR 3.5; but AIR 3.1, which is included with Flex 4.6 works too. -->
+<project name="test" default="build-all" basedir=".">
+    <property name="FLEX_HOME" value="C:\Program Files (x86)\Adobe\Adobe Flash Builder 4.6\sdks\4.6.0+AIR35beta" />
+    <property name="BUILDDIR" value="./builddir" />
+    <property name="BASEDIR" value="." />
+    	
+    <taskdef name="compc" classname="flex.ant.CompcTask" classpath="${FLEX_HOME}/ant/lib/flexTasks.jar" />
+    <taskdef name="asdoc" classname="flex.ant.AsDocTask" classpath="${FLEX_HOME}/ant/lib/flexTasks.jar" />
+
+	<target name="compile-flex" description="Compile AndroidCameraANE.swc">
+		<compc output="${BUILDDIR}/AndroidCameraANE.swc" locale="en_US"
+			   optimize="true" strict="true" as3="true" warnings="true"
+			   static-link-runtime-shared-libraries="true">
+			<load-config filename="${FLEX_HOME}/frameworks/air-config.xml"/>
+			<source-path path-element="${BASEDIR}/actionscript/src"/>
+			<include-sources dir="${BASEDIR}/actionscript/src" includes="*"/>
+		</compc>
+	</target>
+
+	<target name="copy-files" description="copy needed files to the build dir" >
+		
+		<copy todir="${BUILDDIR}/android/libs/armeabi">
+			<fileset dir="${BASEDIR}/java/libs/armeabi" />
+		</copy>
+		<copy todir="${BUILDDIR}/android/libs/armeabi-v7a">
+			<fileset dir="${BASEDIR}/java/libs/armeabi-v7a" />
+		</copy>
+		<copy todir="${BUILDDIR}/android/libs/x86">
+			<fileset dir="${BASEDIR}/java/libs/x86" />
+		</copy>		
+		<copy file="${BASEDIR}/java/bin/zbarane.jar" todir="${BUILDDIR}/android/"/>
+
+		<copy file="${BASEDIR}/actionscript/extension.xml" todir="${BUILDDIR}/"/>
+		<copy file="${BASEDIR}/actionscript/platformoptions.xml" todir="${BUILDDIR}/"/>
+		
+		<copy todir="${BUILDDIR}/ios">
+			<fileset dir="${BASEDIR}/ios" />
+		</copy>
+	</target>
+	
+	<target name="unzipSWC" description="unzip library.swf from the .swc" >
+		<unzip src="${BUILDDIR}/AndroidCameraANE.swc" dest="${BUILDDIR}/android">
+    		<patternset><include name="library.swf"/></patternset>
+		</unzip>
+		<unzip src="${BUILDDIR}/AndroidCameraANE.swc" dest="${BUILDDIR}/default">
+    		<patternset><include name="library.swf"/></patternset>
+		</unzip>
+		<unzip src="${BUILDDIR}/AndroidCameraANE.swc" dest="${BUILDDIR}/ios">
+			<patternset><include name="library.swf"/></patternset>
+		</unzip>
+	</target>
+
+	<target name="build-ane" >
+	 	<exec executable="${FLEX_HOME}/bin/adt.bat" failonerror="true" dir="${BUILDDIR}">
+			<arg line="-package -target ane zbar.ane extension.xml -swc AndroidCameraANE.swc -platform Android-ARM -C android . -platform default -C default . -platform iPhone-ARM -C ios . -platformoptions platformoptions.xml"/>
+	 	</exec>
+	</target>
+	<!--
+	<target name="doc" description="updates ane with asdoc. For Android it generates invalid ane file!">
+		<asdoc output="${BUILDDIR}/tempDoc" lenient="true" failonerror="true" 
+				keep-xml="true" skip-xsl="true" fork="true">
+			<load-config filename="${FLEX_HOME}/frameworks/air-config.xml"/>
+			<doc-sources path-element="${BASEDIR}/actionscript/src/com/blogspot/visualscripts/zbar/Zbar.as"/> 
+		</asdoc>
+		<zip destfile="${BUILDDIR}/zbar.ane" update="true">
+		    <zipfileset dir="${BUILDDIR}/tempDoc/tempdita" prefix="docs">
+			    <include name="*.*"/>
+				<exclude name="ASDoc_Config.xml"/>
+				<exclude name="overviews.xml"/>
+		    </zipfileset>
+		</zip>
+	</target>
+	-->
+	<!-- build order is important -->
+	<target name="build-all">
+		<delete dir="${BUILDDIR}" />
+		<antcall target="compile-flex" />
+		<antcall target="copy-files" />
+		<antcall target="unzipSWC" />
+		<antcall target="build-ane" />
+		<!--<antcall target="doc" />  Makes invalid file on Android! -->
+		<delete includeEmptyDirs="true">  
+			<fileset dir="${BUILDDIR}">  
+				<include name="*/**" />
+				<exclude name="zbar.ane" /> 
+			</fileset>  
+		</delete>
+	</target>
+
+</project>
