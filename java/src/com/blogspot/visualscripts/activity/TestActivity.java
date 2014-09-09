@@ -2,7 +2,6 @@ package com.blogspot.visualscripts.activity;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.ViewGroup.LayoutParams;
@@ -35,7 +34,7 @@ public class TestActivity extends Activity {
 			startActivityForResult(intent, 123);
         }
 	}
-
+	
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		Log.i("zbar", "app finised, all done.");

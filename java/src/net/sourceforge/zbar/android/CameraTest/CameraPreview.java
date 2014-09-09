@@ -8,8 +8,11 @@ import android.hardware.Camera.AutoFocusCallback;
 import android.hardware.Camera.PreviewCallback;
 import android.os.Handler;
 import android.util.Log;
+import android.view.Display;
+import android.view.Surface;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
+import android.view.WindowManager;
 
 public class CameraPreview extends SurfaceView implements
 		SurfaceHolder.Callback {
@@ -44,7 +47,8 @@ public class CameraPreview extends SurfaceView implements
 				mCamera.getParameters().setFocusMode("continuous-picture");
 				mCamera.autoFocus(autoFocusCB);
 			} else if (focusModes.contains(Camera.Parameters.FOCUS_MODE_AUTO)) {
-				mCamera.getParameters().setFocusMode(Camera.Parameters.FOCUS_MODE_AUTO);
+				mCamera.getParameters().setFocusMode(
+						Camera.Parameters.FOCUS_MODE_AUTO);
 				mCamera.autoFocus(autoFocusCB);
 			}
 		}
@@ -77,15 +81,22 @@ public class CameraPreview extends SurfaceView implements
 			// preview surface does not exist
 			return;
 		}
+
 		try {
 			mCamera.stopPreview();
 		} catch (Exception e) {
 			// ignore: tried to stop a non-existent preview
 		}
-		try {
-			// Hard code camera surface rotation 90 degs to match Activity view
-			// in portrait
+		
+		Display display = ((WindowManager)getContext().getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay();
+		if (display.getRotation() == Surface.ROTATION_0) {
 			mCamera.setDisplayOrientation(90);
+		}
+		if (display.getRotation() == Surface.ROTATION_270) {
+			mCamera.setDisplayOrientation(180);
+		}
+		
+		try {
 			mCamera.setPreviewDisplay(mHolder);
 			mCamera.startPreview();
 			mCamera.setPreviewCallback(previewCb);
