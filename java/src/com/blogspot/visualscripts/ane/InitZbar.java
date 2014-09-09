@@ -3,7 +3,7 @@ package com.blogspot.visualscripts.ane;
 import com.adobe.fre.FREContext;
 import com.adobe.fre.FREExtension;
 /** Entry point for the ANE.
- * If you add external .jar files or layout .xml-s, ADT will faild to compile, since it cant 
+ * If you add external .jar files or layout .xml-s, ADT will fail to compile, since it can't 
  * handle nested .jar files. To solve this, modify the ant script to merge jar files. */
 public class InitZbar implements FREExtension {
 

@@ -1,0 +1,4 @@
+java/bin/*
+!java/bin/zbarane.jar
+!java/bin/zbarANE.apk
+

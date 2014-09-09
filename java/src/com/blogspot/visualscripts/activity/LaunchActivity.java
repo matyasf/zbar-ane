@@ -17,11 +17,12 @@ public class LaunchActivity extends Activity {
     	
     	View view = new View(this);
     	setContentView(view);
-    	
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-        
-        Intent intent = new Intent(this, CodeReaderActivity.class);
-        startActivityForResult(intent, 6666);
+         
+        if (savedInstanceState == null){
+        	Log.i("zbar", "Launching camera");
+        	Intent intent = new Intent(this, CodeReaderActivity.class);
+            startActivityForResult(intent, 6666);
+        }
     }
     
     @Override
@@ -32,7 +33,7 @@ public class LaunchActivity extends Activity {
     	if (data != null) {
     		String actRes = data.getStringExtra("ACTIVITY_RESULT");
     		if (actRes.equals("OK") == true) {
-    			res = data.getStringExtra("SCAN_RESULT");
+				res = data.getStringExtra("SCAN_RESULT");
     			status = "SCANNED";
     		} else if (actRes.equals("CAMERA_ERROR") == true) {
     			status = "CAMERA_ERROR";
@@ -40,13 +41,15 @@ public class LaunchActivity extends Activity {
     			status = "ABORTED";
     		}
     	}
-    	Log.i("zbar","FINISHED "+res );
-    	try {
+    	Log.i("zbar","finiseh "+ res + " status: " + status );
+    	if (ScanCodeFunction.scanCodeContext != null) {
     		ScanCodeFunction.scanCodeContext.dispatchStatusEventAsync(status, res);
-    	} catch (NoClassDefFoundError err) {
-    		Log.e("zbar", "ScanCodeFunction class not found. This is normal in standalone mode.");
-    		finish();
-    		System.exit(0);
+    	} else {
+    		Intent dat = new Intent();
+            dat.putExtra("ACTIVITY_RESULT", status);
+            dat.putExtra("SCAN_RESULT", res);
+            setResult(RESULT_OK,dat);
+    		Log.e("zbar", "No FREContext. This is normal in standalone mode.");
     	}
         super.onActivityResult(requestCode, resultCode, data);
         finish();

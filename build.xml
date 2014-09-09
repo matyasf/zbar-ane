@@ -1,7 +1,7 @@
 <!-- builds the project. Does NOT build the Android/iOS project, you need to update their files manually. 
 Built with Flex 4.6+AIR 3.5; but AIR 3.1, which is included with Flex 4.6 works too. -->
 <project name="test" default="build-all" basedir=".">
-    <property name="FLEX_HOME" value="C:\Program Files (x86)\Adobe\Adobe Flash Builder 4.6\sdks\4.6.0+AIR35beta" />
+    <property name="FLEX_HOME" value="C:\CODE\flex413" />
     <property name="BUILDDIR" value="./builddir" />
     <property name="BASEDIR" value="." />
     	
@@ -11,7 +11,7 @@ Built with Flex 4.6+AIR 3.5; but AIR 3.1, which is included with Flex 4.6 works 
 	<target name="compile-flex" description="Compile AndroidCameraANE.swc">
 		<compc output="${BUILDDIR}/AndroidCameraANE.swc" locale="en_US"
 			   optimize="true" strict="true" as3="true" warnings="true"
-			   static-link-runtime-shared-libraries="true">
+			   static-link-runtime-shared-libraries="true" swf-version="18">
 			<load-config filename="${FLEX_HOME}/frameworks/air-config.xml"/>
 			<source-path path-element="${BASEDIR}/actionscript/src"/>
 			<include-sources dir="${BASEDIR}/actionscript/src" includes="*"/>

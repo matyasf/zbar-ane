@@ -1,99 +1,109 @@
-/*
- * Barebones implementation of displaying camera preview.
- * 
- * Created by lisah0 on 2012-02-24
- */
 package net.sourceforge.zbar.android.CameraTest;
 
-import java.io.IOException;
+import java.util.List;
 
 import android.content.Context;
 import android.hardware.Camera;
 import android.hardware.Camera.AutoFocusCallback;
 import android.hardware.Camera.PreviewCallback;
+import android.os.Handler;
 import android.util.Log;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 
-/** A basic Camera preview class */
-public class CameraPreview extends SurfaceView implements SurfaceHolder.Callback {
-    private SurfaceHolder mHolder;
-    private Camera mCamera;
-    private PreviewCallback previewCallback;
-    private AutoFocusCallback autoFocusCallback;
+public class CameraPreview extends SurfaceView implements
+		SurfaceHolder.Callback {
 
-    public CameraPreview(Context context, Camera camera,
-                         PreviewCallback previewCb,
-                         AutoFocusCallback autoFocusCb) {
-        super(context);
-        mCamera = camera;
-        previewCallback = previewCb;
-        autoFocusCallback = autoFocusCb;
+	private SurfaceHolder mHolder;
+	private Camera mCamera;
+	private boolean previewing = true;
+	private Handler autoFocusHandler;
+	private PreviewCallback previewCb;
 
-        /* 
-         * Set camera to continuous focus if supported, otherwise use
-         * software auto-focus. Only works for API level >=9.
-         */
-        /*
-        Camera.Parameters parameters = camera.getParameters();
-        for (String f : parameters.getSupportedFocusModes()) {
-            if (f == Parameters.FOCUS_MODE_CONTINUOUS_PICTURE) {
-                mCamera.setFocusMode(Parameters.FOCUS_MODE_CONTINUOUS_PICTURE);
-                autoFocusCallback = null;
-                break;
-            }
-        }
-        */
+	public CameraPreview(Context context) {
+		super(context);
 
-        // Install a SurfaceHolder.Callback so we get notified when the
-        // underlying surface is created and destroyed.
-        mHolder = getHolder();
-        mHolder.addCallback(this);
+		autoFocusHandler = new Handler();
 
-        // deprecated setting, but required on Android versions prior to 3.0
-        mHolder.setType(SurfaceHolder.SURFACE_TYPE_PUSH_BUFFERS);
-    }
+		mHolder = getHolder();
+		mHolder.addCallback(this);
+		// deprecated setting, but required on Android versions prior to 3.0
+		mHolder.setType(SurfaceHolder.SURFACE_TYPE_PUSH_BUFFERS);
+	}
 
-    public void surfaceCreated(SurfaceHolder holder) {
-        // The Surface has been created, now tell the camera where to draw the preview.
-        try {
-            mCamera.setPreviewDisplay(holder);
-        } catch (IOException e) {
-            Log.e("ERR", "Error setting camera preview: " + e.getMessage());
-        }
-    }
+	public void setCamera(Camera camera, PreviewCallback _previewCb) {
+		mCamera = camera;
+		previewCb = _previewCb;
+	}
 
-    public void surfaceDestroyed(SurfaceHolder holder) {
-        // Camera preview released in activity
-    }
+	private void focusCamera() {
+		if (previewing) {
+			Camera.Parameters parameters = mCamera.getParameters();
+			List<String> focusModes = parameters.getSupportedFocusModes();
+			if (focusModes.contains("continuous-picture")) {
+				mCamera.getParameters().setFocusMode("continuous-picture");
+				mCamera.autoFocus(autoFocusCB);
+			} else if (focusModes.contains(Camera.Parameters.FOCUS_MODE_AUTO)) {
+				mCamera.getParameters().setFocusMode(Camera.Parameters.FOCUS_MODE_AUTO);
+				mCamera.autoFocus(autoFocusCB);
+			}
+		}
+	}
 
-    public void surfaceChanged(SurfaceHolder holder, int format, int width, int height) {
-        /*
-         * If your preview can change or rotate, take care of those events here.
-         * Make sure to stop the preview before resizing or reformatting it.
-         */
-        if (mHolder.getSurface() == null){
-          // preview surface does not exist
-          return;
-        }
+	// Mimic continuous auto-focusing
+	AutoFocusCallback autoFocusCB = new AutoFocusCallback() {
+		public void onAutoFocus(boolean success, Camera camera) {
+			autoFocusHandler.postDelayed(doAutoFocus, 1000);
+		}
+	};
 
-        // stop preview before making changes
-        try {
-            mCamera.stopPreview();
-        } catch (Exception e){
-          // ignore: tried to stop a non-existent preview
-        }
+	private Runnable doAutoFocus = new Runnable() {
+		public void run() {
+			focusCamera();
+		}
+	};
 
-        try {
-            // Hard code camera surface rotation 90 degs to match Activity view in portrait
-            mCamera.setDisplayOrientation(90);
+	public void surfaceCreated(SurfaceHolder holder) {
+		// do nothing here, surfaceChanged will be called soon
+	}
 
-            mCamera.setPreviewDisplay(mHolder);
-            mCamera.setPreviewCallback(previewCallback);
-            mCamera.startPreview();
-            mCamera.autoFocus(autoFocusCallback);
-        } catch (Exception e){
-            Log.d("DBG", "Error starting camera preview: " + e.getMessage());
-        }
-    }
+	public void surfaceDestroyed(SurfaceHolder holder) {
+		// Camera preview released in activity
+	}
+
+	public void surfaceChanged(SurfaceHolder holder, int format, int width,
+			int height) {
+		if (mHolder.getSurface() == null) {
+			// preview surface does not exist
+			return;
+		}
+		try {
+			mCamera.stopPreview();
+		} catch (Exception e) {
+			// ignore: tried to stop a non-existent preview
+		}
+		try {
+			// Hard code camera surface rotation 90 degs to match Activity view
+			// in portrait
+			mCamera.setDisplayOrientation(90);
+			mCamera.setPreviewDisplay(mHolder);
+			mCamera.startPreview();
+			mCamera.setPreviewCallback(previewCb);
+			previewing = true;
+			focusCamera();
+		} catch (Exception e) {
+			Log.e("zbar", "Error starting camera preview: " + e.getMessage());
+		}
+	}
+
+	public void stopCamera() {
+		previewing = false;
+		autoFocusHandler.removeCallbacksAndMessages(null);
+		if (mCamera != null) {
+			mCamera.setPreviewCallback(null);
+			mCamera.stopPreview();
+			mCamera.release();
+			mCamera = null;
+		}
+	}
 }
