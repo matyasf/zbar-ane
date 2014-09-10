@@ -1,8 +1,6 @@
 package com.blogspot.visualscripts.activity;
 
-import net.sourceforge.zbar.Config;
 import net.sourceforge.zbar.Image;
-import net.sourceforge.zbar.ImageScanner;
 import net.sourceforge.zbar.Symbol;
 import net.sourceforge.zbar.SymbolSet;
 import net.sourceforge.zbar.android.CameraTest.CameraPreview;
@@ -12,6 +10,8 @@ import android.hardware.Camera;
 import android.hardware.Camera.PreviewCallback;
 import android.hardware.Camera.Size;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
@@ -25,12 +25,13 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.blogspot.visualscripts.ane.ScanCodeFunction;
-/** Launches the main Camera activity. This is needed, so it can catch the result of the Activity. */
+import com.blogspot.visualscripts.ane.ZbarContext;
+
+
 public class LaunchActivity extends Activity {
 	
 	private Camera mCamera;
 	private CameraPreview mPreview;
-	private ImageScanner scanner;
 	private String scanResult = "";
 	private FrameLayout cameraPreview;
 	private Button exitBtn;
@@ -72,11 +73,7 @@ public class LaunchActivity extends Activity {
 		rootView.addView(exitBtn);
 
 		setContentView(rootView);
-
-		scanner = new ImageScanner();
-		scanner.setConfig(0, Config.X_DENSITY, 3);
-		scanner.setConfig(0, Config.Y_DENSITY, 3);
-
+		
 		exitBtn.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
 				endTask("ABORTED", "");
@@ -125,13 +122,13 @@ public class LaunchActivity extends Activity {
 			Camera.Parameters parameters = camera.getParameters();
 			Size size = parameters.getPreviewSize();
 
-			Image barcode = new Image(size.width, size.height, "Y800");
-			barcode.setData(data);
-			int result = scanner.scanImage(barcode);
+			Image image = new Image(size.width, size.height, "Y800");
+			image.setData(data);
+			int result = ZbarContext.getScanner().scanImage(image);
 
 			scanResult = "";
 			if (result != 0) {
-				SymbolSet syms = scanner.getResults();
+				SymbolSet syms = ZbarContext.getScanner().getResults();
 				for (Symbol sym : syms) {
 					scanResult = scanResult + sym.getData();
 				}
@@ -140,11 +137,17 @@ public class LaunchActivity extends Activity {
 		}
 	};
 	
-	private void endTask(String status, String result) 
+	private void endTask(final String status, final String result) 
 	{
 		Log.i("zbar","finished "+ result + " status: " + status );
     	if (ScanCodeFunction.scanCodeContext != null) {
-    		ScanCodeFunction.scanCodeContext.dispatchStatusEventAsync(status, result);
+    		try {
+    			ScanCodeFunction.scanCodeContext.dispatchStatusEventAsync(status, result);	
+    		}
+    		catch (Exception ex) {
+    			Log.e("zbar","Error delivering result. This is a bug in AIR. "+ ex.toString() );
+    		}
+    		
     	} else {
     		Intent dat = new Intent();
             dat.putExtra("ACTIVITY_RESULT", status);

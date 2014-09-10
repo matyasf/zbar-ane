@@ -9,8 +9,6 @@ package com.blogspot.visualscripts.zbar{
 	
 import flash.events.StatusEvent;
 import flash.external.ExtensionContext;
-import flash.system.Capabilities;
-import flash.system.System;
 
 /** Barcode/QR code reader AIR native extension, that uses the ZBar library. 
  *  Usage:<br/>
@@ -77,6 +75,26 @@ public class Zbar {
 			returnFunc(STATUS_UNKNOWN_ERROR,"ZBAR::ERROR:failed to call native library.");
 		}
 	}
+
+    /**
+     * Sets scanning configuration. Disable symbol types to increase speed and accuracy.
+     * By default all types of symbols are enabled.
+     * Does NOT work on iOS!
+     * Example: Disable all checks except QR code:
+     *  setConfig(ZbarSymbolType.ALL, ZbarSymbolSetting.ENABLE, 0); // disables everything
+     *  setConfig(ZbarSymbolType.QRCODE, ZbarSymbolSetting.ENABLE, 1); // enable QR code
+     * @Parameters:
+     *  forSymbol: What symbol type should the config set (0 for all)
+     *  setting: what to set
+     *  value: the setting value (for boolean values 0=false,1=true)
+     **/
+    public function setConfig(forSymbol:ZbarSymbolType, setting:ZbarSymbolSetting, value:uint):void {
+        try {
+            extContext.call( "setConfig", forSymbol.symbolType, setting.setting, value );
+        } catch (e:Error) {
+            trace("Zbar error setting config ", e);
+        }
+    }
 	
 	private function onResult(e:StatusEvent):void {
 		extContext.removeEventListener(StatusEvent.STATUS,onResult);

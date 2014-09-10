@@ -1,10 +1,19 @@
 package com.blogspot.visualscripts.activity;
 
+import net.sourceforge.zbar.Config;
+import net.sourceforge.zbar.Symbol;
+
+import com.blogspot.visualscripts.ane.ZbarContext;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
+import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup.LayoutParams;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -18,6 +27,7 @@ public class TestActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		
 		Log.i("zbar", "starting test app");
+		final Activity self = this;
 		
 		LinearLayout rootView = new LinearLayout(this.getApplicationContext());
 		rootView.setOrientation(LinearLayout.VERTICAL);
@@ -29,10 +39,43 @@ public class TestActivity extends Activity {
 		txt.setText("Zbar test app");
 		rootView.addView(txt);
 		
-        if (savedInstanceState == null){
-			Intent intent = new Intent(this, LaunchActivity.class);
-			startActivityForResult(intent, 123);
-        }
+		Button b1 = new Button(this);
+		rootView.addView(b1);
+		b1.setGravity(Gravity.CENTER);
+		b1.setText("Scan for CODE 128");
+		b1.setOnClickListener(new OnClickListener() {
+			public void onClick(View v) {
+				ZbarContext.getScanner().setConfig(Symbol.NONE, Config.ENABLE, 0);
+				ZbarContext.getScanner().setConfig(Symbol.CODE128, Config.ENABLE, 1);
+				Intent intent = new Intent(self, LaunchActivity.class);
+				startActivityForResult(intent, 123);
+			}
+		});
+		
+		Button b2 = new Button(this);
+		rootView.addView(b2);
+		b2.setGravity(Gravity.CENTER);
+		b2.setText("Scan for QR code");
+		b2.setOnClickListener(new OnClickListener() {
+			public void onClick(View v) {
+				ZbarContext.getScanner().setConfig(Symbol.NONE, Config.ENABLE, 0);
+				ZbarContext.getScanner().setConfig(Symbol.QRCODE, Config.ENABLE, 1);
+				Intent intent = new Intent(self, LaunchActivity.class);
+				startActivityForResult(intent, 123);
+			}
+		});
+		
+		Button b3 = new Button(this);
+		rootView.addView(b3);
+		b3.setGravity(Gravity.CENTER);
+		b3.setText("Scan for everything");
+		b3.setOnClickListener(new OnClickListener() {
+			public void onClick(View v) {
+				ZbarContext.getScanner().setConfig(Symbol.NONE, Config.ENABLE, 1);
+				Intent intent = new Intent(self, LaunchActivity.class);
+				startActivityForResult(intent, 123);
+			}
+		});
 	}
 	
 	@Override
@@ -41,6 +84,9 @@ public class TestActivity extends Activity {
 		txt.setText("Zbar test app results: Status: "
 				+ data.getStringExtra("ACTIVITY_RESULT") + " data: "
 				+ data.getStringExtra("SCAN_RESULT"));
+		
+		ZbarContext.destroyScanner();
+		
 		super.onActivityResult(requestCode, resultCode, data);
 	}
 
